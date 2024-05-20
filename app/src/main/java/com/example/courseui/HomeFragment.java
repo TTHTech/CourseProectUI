@@ -43,6 +43,6 @@ public class HomeFragment extends Fragment {
         itemsArrayList.add(new CourseDomain("Quick Learn Java Language", "Sara Anderson", 700, 4.3, "pic1"));
         itemsArrayList.add(new CourseDomain("Full Course android kotlin", "Alex Alba", 450, 4.6, "pic2"));
         popularView.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
-        popularView.setAdapter(new CourseAdapter(itemsArrayList));
+        popularView.setAdapter(new HomeCourseAdapter(itemsArrayList));
     }
 }

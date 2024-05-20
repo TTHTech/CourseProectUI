@@ -17,12 +17,12 @@ import com.bumptech.glide.Glide;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 
-public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.ViewHolder> {
+public class HomeCourseAdapter extends RecyclerView.Adapter<HomeCourseAdapter.ViewHolder> {
     ArrayList<CourseDomain> items;
     DecimalFormat formatter;
     Context context;
 
-    public CourseAdapter(ArrayList<CourseDomain> items) {
+    public HomeCourseAdapter(ArrayList<CourseDomain> items) {
         this.items = items;
         formatter = new DecimalFormat("###,###,###,###.##");
     }
