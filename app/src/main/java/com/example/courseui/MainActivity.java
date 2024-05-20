@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
 
         ViewPagerAdapter adapter = new ViewPagerAdapter(this);
         mViewPager.setAdapter(adapter);
+        mViewPager.setOffscreenPageLimit(3);
 
         mViewPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
             @Override
@@ -48,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        mBottomNavigationView.setOnNavigationItemSelectedListener(item -> {
+        mBottomNavigationView.setOnItemSelectedListener(item -> {
             int id = item.getItemId();
             if (id == R.id.home_tab) {
                 mViewPager.setCurrentItem(0);
