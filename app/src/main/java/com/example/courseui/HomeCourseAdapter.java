@@ -17,12 +17,12 @@ import com.bumptech.glide.Glide;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 
-public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.ViewHolder> {
+public class HomeCourseAdapter extends RecyclerView.Adapter<HomeCourseAdapter.ViewHolder> {
     ArrayList<CourseDomain> items;
     DecimalFormat formatter;
     Context context;
 
-    public CourseAdapter(ArrayList<CourseDomain> items) {
+    public HomeCourseAdapter(ArrayList<CourseDomain> items) {
         this.items = items;
         formatter = new DecimalFormat("###,###,###,###.##");
     }
@@ -42,11 +42,11 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.ViewHolder
         holder.priceTxt.setText("$" + formatter.format(items.get(position).getPrice()));
 
 
-        int drawableResourceId = holder.itemView.getResources().getIdentifier(items.get(position).getPicPath(),
-                "drawable", holder.itemView.getContext().getPackageName());
+//        int drawableResourceId = holder.itemView.getResources().getIdentifier(items.get(position).getPicPath(),
+//                "drawable", holder.itemView.getContext().getPackageName());
 
         Glide.with(holder.itemView.getContext())
-                .load(drawableResourceId)
+                .load(items.get(position).getImageUrl())
                 .into(holder.pic);
 
     }
@@ -69,3 +69,4 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.ViewHolder
         }
     }
 }
+
